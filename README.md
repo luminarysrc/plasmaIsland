@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.svg" alt="Plasma Island logo" width="128" height="128">
+</p>
+
 # Plasma Island
 
 A Dynamic Island–style pill for a KDE Plasma 6 top panel.

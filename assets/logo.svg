@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Plasma Island</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b3577"/>
+      <stop offset="0.55" stop-color="#7a4f8a"/>
+      <stop offset="1" stop-color="#d77b78"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="pill"><rect x="69" y="187" width="374" height="138" rx="69"/></clipPath>
+    <filter id="drop" x="-20%" y="-30%" width="140%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#150f33" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#sky)"/>
+  <!-- the island -->
+  <g filter="url(#drop)">
+    <rect x="68" y="186" width="376" height="140" rx="70" fill="#000"/>
+    <rect x="69" y="187" width="374" height="138" rx="69" fill="none" stroke="#fff" stroke-opacity="0.22" stroke-width="2"/>
+    <rect x="69" y="187" width="374" height="62" fill="url(#shine)" clip-path="url(#pill)"/>
+  </g>
+  <!-- time hint -->
+  <rect x="124" y="241" width="132" height="30" rx="15" fill="#fff"/>
+  <!-- equalizer bars -->
+  <g fill="#c8c8c8">
+    <rect x="296" y="228" width="28" height="56" rx="14"/>
+    <rect x="338" y="216" width="28" height="80" rx="14"/>
+    <rect x="380" y="234" width="28" height="44" rx="14"/>
+  </g>
+</svg>
