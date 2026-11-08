@@ -32,14 +32,29 @@ PlasmoidItem {
     // --- Clock -----------------------------------------------------------
     property date now: new Date()
     readonly property bool showSeconds: Plasmoid.configuration.showSeconds
+    // Clock format: 0 = follow system locale, 1 = 12-hour, 2 = 24-hour.
+    readonly property int clockMode: Plasmoid.configuration.clockFormat
+    readonly property string shortTimeFormat: clockMode === 1 ? "h:mm AP"
+        : clockMode === 2 ? "HH:mm" : Qt.locale().timeFormat(Locale.ShortFormat)
+    readonly property bool twelveHour: /a/i.test(shortTimeFormat)
     readonly property string timeText: {
-        let fmt = Qt.locale().timeFormat(Locale.ShortFormat);
+        let fmt = shortTimeFormat;
         if (showSeconds && fmt.indexOf("ss") < 0) {
             fmt = fmt.replace("mm", "mm:ss");
         }
         return Qt.locale().toString(now, fmt);
     }
-    readonly property string dateText: Qt.locale().toString(now, "ddd, MMM d")
+    // Date format shown on the right of the pill (see the settings for the choices).
+    readonly property var dateFormats: [
+        "ddd, MMM d", "ddd, d MMM", "dd/MM/yyyy", "MM/dd/yyyy", "yyyy-MM-dd", "d MMMM yyyy"
+    ]
+    readonly property string dateText: {
+        const i = Plasmoid.configuration.dateFormat;
+        if (i === 6) {
+            return Qt.locale().toString(now, Locale.ShortFormat);
+        }
+        return Qt.locale().toString(now, dateFormats[i] || dateFormats[0]);
+    }
 
     Timer {
         // Fire just after each second boundary so the display never lags.

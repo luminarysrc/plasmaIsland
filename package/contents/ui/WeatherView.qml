@@ -9,6 +9,7 @@ Item {
 
     property var weather: null     // a Weather item
     property real u: 1
+    property bool twelveHour: false
 
     readonly property bool ready: !!weather && weather.available
 
@@ -43,9 +44,7 @@ Item {
 
     function hourLabel(d) {
         // Hour only, in the user's 12h/24h convention.
-        const fmt = Qt.locale().timeFormat(Locale.ShortFormat);
-        const twelve = /a/i.test(fmt);
-        return Qt.locale().toString(d, twelve ? "h AP" : "HH:mm");
+        return Qt.locale().toString(d, twelveHour ? "h AP" : "HH:mm");
     }
 
     // --- Loading / unavailable ----------------------------------------------

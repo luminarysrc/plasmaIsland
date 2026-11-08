@@ -6,6 +6,8 @@ import org.kde.kcmutils as KCM
 KCM.SimpleKCM {
     property alias cfg_city: cityField.text
     property alias cfg_showSeconds: secondsBox.checked
+    property alias cfg_clockFormat: clockBox.currentIndex
+    property alias cfg_dateFormat: dateBox.currentIndex
     property alias cfg_size: sizeBox.value
     property alias cfg_showTrackToast: toastBox.checked
 
@@ -38,6 +40,25 @@ KCM.SimpleKCM {
             id: secondsBox
             Kirigami.FormData.label: i18n("Clock:")
             text: i18n("Show seconds")
+        }
+        QQC2.ComboBox {
+            id: clockBox
+            Kirigami.FormData.label: i18n("Time format:")
+            model: [i18n("System default"), i18n("12-hour"), i18n("24-hour")]
+        }
+        QQC2.ComboBox {
+            id: dateBox
+            Kirigami.FormData.label: i18n("Date format:")
+            readonly property var sample: new Date()
+            model: [
+                Qt.locale().toString(sample, "ddd, MMM d"),
+                Qt.locale().toString(sample, "ddd, d MMM"),
+                Qt.locale().toString(sample, "dd/MM/yyyy"),
+                Qt.locale().toString(sample, "MM/dd/yyyy"),
+                Qt.locale().toString(sample, "yyyy-MM-dd"),
+                Qt.locale().toString(sample, "d MMMM yyyy"),
+                i18n("System short date") + " (" + Qt.locale().toString(sample, Locale.ShortFormat) + ")"
+            ]
         }
         QQC2.CheckBox {
             id: toastBox

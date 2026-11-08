@@ -60,6 +60,7 @@ Item {
             anchors.fill: parent
             visible: card.mode === "weather"
             weather: card.app.weather
+            twelveHour: card.app.twelveHour
             u: card.u
         }
 
@@ -70,6 +71,7 @@ Item {
             active: card.shown && visible
             now: card.app.now
             zones: card.app.worldClocks
+            timeFormat: card.app.shortTimeFormat
             u: card.u
             onConfigureRequested: card.configureRequested()
         }

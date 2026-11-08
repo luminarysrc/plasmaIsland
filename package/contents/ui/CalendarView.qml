@@ -9,6 +9,7 @@ Item {
 
     property date now: new Date()
     property real u: 1
+    property string timeFormat: Qt.locale().timeFormat(Locale.ShortFormat)
     property bool active: false
     // [{ city: string, delta: seconds ahead of local time }]
     property var zones: []
@@ -216,7 +217,7 @@ Item {
                 }
                 Text {
                     Layout.rightMargin: 4 * view.u
-                    text: Qt.locale().toString(parent.time, Qt.locale().timeFormat(Locale.ShortFormat))
+                    text: Qt.locale().toString(parent.time, view.timeFormat)
                     color: "white"
                     font.pixelSize: Math.round(14 * view.u)
                     font.weight: Font.DemiBold

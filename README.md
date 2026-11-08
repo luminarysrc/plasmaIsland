@@ -24,7 +24,7 @@ Media works with anything that speaks MPRIS (Spotify, browsers, VLC, Elisa, mpv�
 Plasma's own media service, and follows whichever player Plasma considers active.
 
 Weather comes from [Open-Meteo](https://open-meteo.com) (free, no account) and refreshes every
-15 minutes. °C or °F follows your system locale; the time format (12h/24h) follows your locale too.
+15 minutes. °C or °F follows your system locale; the time format (12h/24h) and date format follow your locale by default and can be changed in the settings.
 
 ## Install
 
