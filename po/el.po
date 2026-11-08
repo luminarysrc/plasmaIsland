@@ -1,0 +1,241 @@
+# Plasma Island translation.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the plasma-island package.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-island\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-08 22:08+0100\n"
+"PO-Revision-Date: 2026-11-08 22:00+0100\n"
+"Last-Translator: Plasma Island contributors\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Language: el\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: package/contents/ui/CalendarView.qml:25
+msgctxt "hours, short"
+msgid "h"
+msgstr "ω"
+
+#: package/contents/ui/CalendarView.qml:104
+msgid "Today"
+msgstr "Σήμερα"
+
+#: package/contents/ui/CalendarView.qml:211
+msgid "Tomorrow"
+msgstr "Αύριο"
+
+#: package/contents/ui/CalendarView.qml:211
+msgid "Yesterday"
+msgstr "Χθες"
+
+#: package/contents/ui/CalendarView.qml:234
+msgid "Add time zones…"
+msgstr "Προσθήκη ζωνών ώρας…"
+
+#: package/contents/ui/configGeneral.qml:17
+msgid "Weather city:"
+msgstr "Πόλη καιρού:"
+
+#: package/contents/ui/configGeneral.qml:18
+msgid "e.g. Berlin"
+msgstr "π.χ. Αθήνα"
+
+#: package/contents/ui/configGeneral.qml:21
+msgid "Without a city, the pill shows “Set city” instead of the temperature."
+msgstr "Χωρίς πόλη, η κάψουλα εμφανίζει «Ορισμός πόλης» αντί για τη θερμοκρασία."
+
+#: package/contents/ui/configGeneral.qml:27
+msgid "Size:"
+msgstr "Μέγεθος:"
+
+#: package/contents/ui/configGeneral.qml:31
+msgid "%1 px"
+msgstr "%1 px"
+
+#: package/contents/ui/configGeneral.qml:35
+msgid "Tip: hold Ctrl and scroll over the pill to resize it live."
+msgstr "Συμβουλή: κρατήστε πατημένο το Ctrl και κυλήστε πάνω στην κάψουλα για να αλλάξετε το μέγεθος άμεσα."
+
+#: package/contents/ui/configGeneral.qml:41
+msgid "Clock:"
+msgstr "Ρολόι:"
+
+#: package/contents/ui/configGeneral.qml:42
+msgid "Show seconds"
+msgstr "Εμφάνιση δευτερολέπτων"
+
+#: package/contents/ui/configGeneral.qml:46
+msgid "Time format:"
+msgstr "Μορφή ώρας:"
+
+#: package/contents/ui/configGeneral.qml:47
+msgid "System default"
+msgstr "Προεπιλογή συστήματος"
+
+#: package/contents/ui/configGeneral.qml:47
+msgid "12-hour"
+msgstr "12ωρη"
+
+#: package/contents/ui/configGeneral.qml:47
+msgid "24-hour"
+msgstr "24ωρη"
+
+#: package/contents/ui/configGeneral.qml:51
+msgid "Date format:"
+msgstr "Μορφή ημερομηνίας:"
+
+#: package/contents/ui/configGeneral.qml:60
+msgid "System short date"
+msgstr "Σύντομη ημερομηνία συστήματος"
+
+#: package/contents/ui/configGeneral.qml:65
+msgid "Music:"
+msgstr "Μουσική:"
+
+#: package/contents/ui/configGeneral.qml:66
+msgid "Briefly show each new track in the pill"
+msgstr "Σύντομη εμφάνιση κάθε νέου κομματιού στην κάψουλα"
+
+#: package/contents/ui/configTimeZones.qml:44
+msgid "No time zones yet. Search below and click one to add it."
+msgstr "Δεν υπάρχουν ζώνες ώρας ακόμα. Αναζητήστε παρακάτω και πατήστε σε μία για να την προσθέσετε."
+
+#: package/contents/ui/configTimeZones.qml:45
+msgid "Shown in the calendar card, in this order:"
+msgstr "Εμφανίζονται στην κάρτα ημερολογίου με αυτή τη σειρά:"
+
+#: package/contents/ui/configTimeZones.qml:64
+msgid "Move up"
+msgstr "Μετακίνηση πάνω"
+
+#: package/contents/ui/configTimeZones.qml:71
+msgid "Move down"
+msgstr "Μετακίνηση κάτω"
+
+#: package/contents/ui/configTimeZones.qml:77
+msgid "Remove"
+msgstr "Αφαίρεση"
+
+#: package/contents/ui/configTimeZones.qml:87
+msgid "Search a city…"
+msgstr "Αναζήτηση πόλης…"
+
+#: package/contents/ui/Island.qml:188
+msgid "Set city"
+msgstr "Ορισμός πόλης"
+
+#: package/contents/ui/PlayerView.qml:68
+msgid "Nothing playing"
+msgstr "Δεν παίζει τίποτα"
+
+#: package/contents/ui/WeatherView.qml:23
+msgid "Clear"
+msgstr "Αίθριος"
+
+#: package/contents/ui/WeatherView.qml:24
+msgid "Mostly clear"
+msgstr "Κυρίως αίθριος"
+
+#: package/contents/ui/WeatherView.qml:25
+msgid "Partly cloudy"
+msgstr "Μερική συννεφιά"
+
+#: package/contents/ui/WeatherView.qml:26
+msgid "Overcast"
+msgstr "Συννεφιά"
+
+#: package/contents/ui/WeatherView.qml:27
+msgid "Fog"
+msgstr "Ομίχλη"
+
+#: package/contents/ui/WeatherView.qml:28
+msgid "Drizzle"
+msgstr "Ψιχάλες"
+
+#: package/contents/ui/WeatherView.qml:29
+msgid "Freezing drizzle"
+msgstr "Παγωμένες ψιχάλες"
+
+#: package/contents/ui/WeatherView.qml:30
+msgid "Rain"
+msgstr "Βροχή"
+
+#: package/contents/ui/WeatherView.qml:31
+msgid "Heavy rain"
+msgstr "Δυνατή βροχή"
+
+#: package/contents/ui/WeatherView.qml:32
+msgid "Freezing rain"
+msgstr "Παγωμένη βροχή"
+
+#: package/contents/ui/WeatherView.qml:33
+msgid "Snow"
+msgstr "Χιόνι"
+
+#: package/contents/ui/WeatherView.qml:34
+msgid "Heavy snow"
+msgstr "Έντονη χιονόπτωση"
+
+#: package/contents/ui/WeatherView.qml:35
+msgid "Snow grains"
+msgstr "Χιονοκόκκοι"
+
+#: package/contents/ui/WeatherView.qml:36
+msgid "Showers"
+msgstr "Μπόρες"
+
+#: package/contents/ui/WeatherView.qml:37
+msgid "Heavy showers"
+msgstr "Δυνατές μπόρες"
+
+#: package/contents/ui/WeatherView.qml:38
+msgid "Snow showers"
+msgstr "Χιονοπτώσεις"
+
+#: package/contents/ui/WeatherView.qml:39
+msgid "Thunderstorm"
+msgstr "Καταιγίδα"
+
+#: package/contents/ui/WeatherView.qml:40
+msgid "Thunderstorm with hail"
+msgstr "Καταιγίδα με χαλάζι"
+
+#: package/contents/ui/WeatherView.qml:54
+msgid "Weather unavailable"
+msgstr "Ο καιρός δεν είναι διαθέσιμος"
+
+#: package/contents/ui/WeatherView.qml:54
+msgid "Loading weather…"
+msgstr "Φόρτωση καιρού…"
+
+#: package/contents/ui/WeatherView.qml:105
+msgid "H:%1  L:%2"
+msgstr "Μέγ:%1  Ελάχ:%2"
+
+#: package/contents/ui/WeatherView.qml:127
+msgid "Feels like %1"
+msgstr "Αίσθηση %1"
+
+#: package/contents/ui/WeatherView.qml:130
+#, javascript-format
+msgid "Humidity %1%"
+msgstr "Υγρασία %1%"
+
+#: package/contents/ui/WeatherView.qml:133
+msgid "Wind %1 %2"
+msgstr "Άνεμος %1 %2"
+
+#: package/contents/config/config.qml:6
+msgid "General"
+msgstr "Γενικά"
+
+#: package/contents/config/config.qml:11
+msgid "Time Zones"
+msgstr "Ζώνες ώρας"
+

@@ -45,6 +45,13 @@ the things on its left and right are the same width.
 
 You'll probably want to remove Plasma's Digital Clock from the panel as well.
 
+## Translations
+
+Plasma Island is translated into Greek, Spanish, German and Russian (it follows your system language).
+To add or fix a language, edit or copy a file in [`po/`](po) (e.g. `po/fr.po` from
+`po/plasma_applet_io.github.luminarysrc.plasmaisland.pot`) and open a pull request. `./install.sh`
+compiles them with `msgfmt` (from gettext).
+
 ## Update
 
 ```sh

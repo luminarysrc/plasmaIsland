@@ -3,6 +3,8 @@
 set -euo pipefail
 
 cd "$(dirname "$0")"
+
+./po/build.sh
 ID="io.github.luminarysrc.plasmaisland"
 
 if kpackagetool6 -t Plasma/Applet -l 2>/dev/null | grep -qx "$ID"; then

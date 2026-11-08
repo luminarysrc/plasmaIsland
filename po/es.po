@@ -1,0 +1,241 @@
+# Plasma Island translation.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the plasma-island package.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-island\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-08 22:08+0100\n"
+"PO-Revision-Date: 2026-11-08 22:00+0100\n"
+"Last-Translator: Plasma Island contributors\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Language: es\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: package/contents/ui/CalendarView.qml:25
+msgctxt "hours, short"
+msgid "h"
+msgstr "h"
+
+#: package/contents/ui/CalendarView.qml:104
+msgid "Today"
+msgstr "Hoy"
+
+#: package/contents/ui/CalendarView.qml:211
+msgid "Tomorrow"
+msgstr "Mañana"
+
+#: package/contents/ui/CalendarView.qml:211
+msgid "Yesterday"
+msgstr "Ayer"
+
+#: package/contents/ui/CalendarView.qml:234
+msgid "Add time zones…"
+msgstr "Añadir zonas horarias…"
+
+#: package/contents/ui/configGeneral.qml:17
+msgid "Weather city:"
+msgstr "Ciudad del tiempo:"
+
+#: package/contents/ui/configGeneral.qml:18
+msgid "e.g. Berlin"
+msgstr "p. ej., Madrid"
+
+#: package/contents/ui/configGeneral.qml:21
+msgid "Without a city, the pill shows “Set city” instead of the temperature."
+msgstr "Sin ciudad, la píldora muestra «Elegir ciudad» en lugar de la temperatura."
+
+#: package/contents/ui/configGeneral.qml:27
+msgid "Size:"
+msgstr "Tamaño:"
+
+#: package/contents/ui/configGeneral.qml:31
+msgid "%1 px"
+msgstr "%1 px"
+
+#: package/contents/ui/configGeneral.qml:35
+msgid "Tip: hold Ctrl and scroll over the pill to resize it live."
+msgstr "Consejo: mantén pulsado Ctrl y desplaza sobre la píldora para cambiar su tamaño al instante."
+
+#: package/contents/ui/configGeneral.qml:41
+msgid "Clock:"
+msgstr "Reloj:"
+
+#: package/contents/ui/configGeneral.qml:42
+msgid "Show seconds"
+msgstr "Mostrar segundos"
+
+#: package/contents/ui/configGeneral.qml:46
+msgid "Time format:"
+msgstr "Formato de hora:"
+
+#: package/contents/ui/configGeneral.qml:47
+msgid "System default"
+msgstr "Predeterminado del sistema"
+
+#: package/contents/ui/configGeneral.qml:47
+msgid "12-hour"
+msgstr "12 horas"
+
+#: package/contents/ui/configGeneral.qml:47
+msgid "24-hour"
+msgstr "24 horas"
+
+#: package/contents/ui/configGeneral.qml:51
+msgid "Date format:"
+msgstr "Formato de fecha:"
+
+#: package/contents/ui/configGeneral.qml:60
+msgid "System short date"
+msgstr "Fecha corta del sistema"
+
+#: package/contents/ui/configGeneral.qml:65
+msgid "Music:"
+msgstr "Música:"
+
+#: package/contents/ui/configGeneral.qml:66
+msgid "Briefly show each new track in the pill"
+msgstr "Mostrar brevemente cada pista nueva en la píldora"
+
+#: package/contents/ui/configTimeZones.qml:44
+msgid "No time zones yet. Search below and click one to add it."
+msgstr "Aún no hay zonas horarias. Busca abajo y haz clic en una para añadirla."
+
+#: package/contents/ui/configTimeZones.qml:45
+msgid "Shown in the calendar card, in this order:"
+msgstr "Se muestran en la tarjeta del calendario, en este orden:"
+
+#: package/contents/ui/configTimeZones.qml:64
+msgid "Move up"
+msgstr "Subir"
+
+#: package/contents/ui/configTimeZones.qml:71
+msgid "Move down"
+msgstr "Bajar"
+
+#: package/contents/ui/configTimeZones.qml:77
+msgid "Remove"
+msgstr "Quitar"
+
+#: package/contents/ui/configTimeZones.qml:87
+msgid "Search a city…"
+msgstr "Buscar una ciudad…"
+
+#: package/contents/ui/Island.qml:188
+msgid "Set city"
+msgstr "Elegir ciudad"
+
+#: package/contents/ui/PlayerView.qml:68
+msgid "Nothing playing"
+msgstr "Nada en reproducción"
+
+#: package/contents/ui/WeatherView.qml:23
+msgid "Clear"
+msgstr "Despejado"
+
+#: package/contents/ui/WeatherView.qml:24
+msgid "Mostly clear"
+msgstr "Mayormente despejado"
+
+#: package/contents/ui/WeatherView.qml:25
+msgid "Partly cloudy"
+msgstr "Parcialmente nublado"
+
+#: package/contents/ui/WeatherView.qml:26
+msgid "Overcast"
+msgstr "Nublado"
+
+#: package/contents/ui/WeatherView.qml:27
+msgid "Fog"
+msgstr "Niebla"
+
+#: package/contents/ui/WeatherView.qml:28
+msgid "Drizzle"
+msgstr "Llovizna"
+
+#: package/contents/ui/WeatherView.qml:29
+msgid "Freezing drizzle"
+msgstr "Llovizna helada"
+
+#: package/contents/ui/WeatherView.qml:30
+msgid "Rain"
+msgstr "Lluvia"
+
+#: package/contents/ui/WeatherView.qml:31
+msgid "Heavy rain"
+msgstr "Lluvia intensa"
+
+#: package/contents/ui/WeatherView.qml:32
+msgid "Freezing rain"
+msgstr "Lluvia helada"
+
+#: package/contents/ui/WeatherView.qml:33
+msgid "Snow"
+msgstr "Nieve"
+
+#: package/contents/ui/WeatherView.qml:34
+msgid "Heavy snow"
+msgstr "Nevada intensa"
+
+#: package/contents/ui/WeatherView.qml:35
+msgid "Snow grains"
+msgstr "Cinarra"
+
+#: package/contents/ui/WeatherView.qml:36
+msgid "Showers"
+msgstr "Chubascos"
+
+#: package/contents/ui/WeatherView.qml:37
+msgid "Heavy showers"
+msgstr "Chubascos fuertes"
+
+#: package/contents/ui/WeatherView.qml:38
+msgid "Snow showers"
+msgstr "Chubascos de nieve"
+
+#: package/contents/ui/WeatherView.qml:39
+msgid "Thunderstorm"
+msgstr "Tormenta"
+
+#: package/contents/ui/WeatherView.qml:40
+msgid "Thunderstorm with hail"
+msgstr "Tormenta con granizo"
+
+#: package/contents/ui/WeatherView.qml:54
+msgid "Weather unavailable"
+msgstr "Tiempo no disponible"
+
+#: package/contents/ui/WeatherView.qml:54
+msgid "Loading weather…"
+msgstr "Cargando el tiempo…"
+
+#: package/contents/ui/WeatherView.qml:105
+msgid "H:%1  L:%2"
+msgstr "Máx:%1  Mín:%2"
+
+#: package/contents/ui/WeatherView.qml:127
+msgid "Feels like %1"
+msgstr "Sensación %1"
+
+#: package/contents/ui/WeatherView.qml:130
+#, javascript-format
+msgid "Humidity %1%"
+msgstr "Humedad %1%"
+
+#: package/contents/ui/WeatherView.qml:133
+msgid "Wind %1 %2"
+msgstr "Viento %1 %2"
+
+#: package/contents/config/config.qml:6
+msgid "General"
+msgstr "General"
+
+#: package/contents/config/config.qml:11
+msgid "Time Zones"
+msgstr "Zonas horarias"
+
