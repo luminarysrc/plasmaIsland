@@ -1,0 +1,18 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "luminarysrc"
+            }
+        ],
+        "Category": "Date and Time",
+        "Description": "A Dynamic Island style pill for the panel: time, weather and date on hover, now playing on click",
+        "Icon": "preferences-system-time",
+        "Id": "io.github.luminarysrc.plasmaisland",
+        "License": "GPL-3.0-or-later",
+        "Name": "Plasma Island",
+        "Version": "0.1.0"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
