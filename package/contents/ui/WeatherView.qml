@@ -8,50 +8,54 @@ Item {
     id: view
 
     property var weather: null     // a Weather item
+    property string language: ""  // "" = system
+    property var locale: Qt.locale()
+
+    Translator { id: t; language: view.language }
     property real u: 1
     property bool twelveHour: false
 
     readonly property bool ready: !!weather && weather.available
 
     implicitWidth: Math.round(360 * u)
-    implicitHeight: Math.round((ready ? 196 : 96) * u)
+    implicitHeight: Math.round((ready ? 204 : 96) * u)
 
     readonly property color dim: "#9a9a9a"
 
     function conditionFor(code) {
         switch (code) {
-        case 0: return i18n("Clear");
-        case 1: return i18n("Mostly clear");
-        case 2: return i18n("Partly cloudy");
-        case 3: return i18n("Overcast");
-        case 45: case 48: return i18n("Fog");
-        case 51: case 53: case 55: return i18n("Drizzle");
-        case 56: case 57: return i18n("Freezing drizzle");
-        case 61: case 63: return i18n("Rain");
-        case 65: return i18n("Heavy rain");
-        case 66: case 67: return i18n("Freezing rain");
-        case 71: case 73: return i18n("Snow");
-        case 75: return i18n("Heavy snow");
-        case 77: return i18n("Snow grains");
-        case 80: case 81: return i18n("Showers");
-        case 82: return i18n("Heavy showers");
-        case 85: case 86: return i18n("Snow showers");
-        case 95: return i18n("Thunderstorm");
-        case 96: case 99: return i18n("Thunderstorm with hail");
+        case 0: return t.tr("Clear");
+        case 1: return t.tr("Mostly clear");
+        case 2: return t.tr("Partly cloudy");
+        case 3: return t.tr("Overcast");
+        case 45: case 48: return t.tr("Fog");
+        case 51: case 53: case 55: return t.tr("Drizzle");
+        case 56: case 57: return t.tr("Freezing drizzle");
+        case 61: case 63: return t.tr("Rain");
+        case 65: return t.tr("Heavy rain");
+        case 66: case 67: return t.tr("Freezing rain");
+        case 71: case 73: return t.tr("Snow");
+        case 75: return t.tr("Heavy snow");
+        case 77: return t.tr("Snow grains");
+        case 80: case 81: return t.tr("Showers");
+        case 82: return t.tr("Heavy showers");
+        case 85: case 86: return t.tr("Snow showers");
+        case 95: return t.tr("Thunderstorm");
+        case 96: case 99: return t.tr("Thunderstorm with hail");
         default: return "";
         }
     }
 
     function hourLabel(d) {
         // Hour only, in the user's 12h/24h convention.
-        return Qt.locale().toString(d, twelveHour ? "h AP" : "HH:mm");
+        return view.locale.toString(d, twelveHour ? "h AP" : "HH:mm");
     }
 
     // --- Loading / unavailable ----------------------------------------------
     Text {
         anchors.centerIn: parent
         visible: !view.ready
-        text: view.weather && view.weather.failed ? i18n("Weather unavailable") : i18n("Loading weather…")
+        text: view.weather && view.weather.failed ? t.tr("Weather unavailable") : t.tr("Loading weather…")
         color: view.dim
         font.pixelSize: Math.round(14 * view.u)
         font.weight: Font.Medium
@@ -88,6 +92,8 @@ Item {
                     color: "white"
                     font.pixelSize: Math.round(14 * view.u)
                     font.weight: Font.DemiBold
+                    wrapMode: Text.WordWrap
+                    maximumLineCount: 2
                     elide: Text.ElideRight
                 }
                 Text {
@@ -102,7 +108,7 @@ Item {
             Text {
                 Layout.alignment: Qt.AlignTop
                 text: view.weather
-                      ? i18n("H:%1  L:%2", view.weather.deg(view.weather.high), view.weather.deg(view.weather.low))
+                      ? t.tr("H:%1  L:%2", view.weather.deg(view.weather.high), view.weather.deg(view.weather.low))
                       : ""
                 color: view.dim
                 font.pixelSize: Math.round(12 * view.u)
@@ -124,13 +130,13 @@ Item {
                 }
                 const parts = [];
                 if (!isNaN(w.feelsLike)) {
-                    parts.push(i18n("Feels like %1", w.deg(w.feelsLike)));
+                    parts.push(t.tr("Feels like %1", w.deg(w.feelsLike)));
                 }
                 if (w.humidity >= 0) {
-                    parts.push(i18n("Humidity %1%", w.humidity));
+                    parts.push(t.tr("Humidity %1%", w.humidity));
                 }
                 if (!isNaN(w.windSpeed)) {
-                    parts.push(i18n("Wind %1 %2", Math.round(w.windSpeed), w.windUnit));
+                    parts.push(t.tr("Wind %1 %2", Math.round(w.windSpeed), t.tr(w.windUnit)));
                 }
                 return parts.join(" · ");
             }

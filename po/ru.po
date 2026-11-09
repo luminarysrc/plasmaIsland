@@ -239,3 +239,15 @@ msgstr "Общие"
 msgid "Time Zones"
 msgstr "Часовые пояса"
 
+
+#: package/contents/ui/configGeneral.qml
+msgid "Language:"
+msgstr "Язык:"
+
+#: package/contents/ui/Weather.qml
+msgid "km/h"
+msgstr "км/ч"
+
+#: package/contents/ui/Weather.qml
+msgid "mph"
+msgstr "миль/ч"

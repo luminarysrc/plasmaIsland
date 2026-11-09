@@ -9,6 +9,10 @@ Item {
 
     property date now: new Date()
     property real u: 1
+    property string language: ""  // "" = system
+    property var locale: Qt.locale()
+
+    Translator { id: t; language: view.language }
     property string timeFormat: Qt.locale().timeFormat(Locale.ShortFormat)
     property bool active: false
     // [{ city: string, delta: seconds ahead of local time }]
@@ -22,7 +26,7 @@ Item {
         const mins = Math.round(Math.abs(seconds) / 60);
         const h = Math.floor(mins / 60);
         const m = mins % 60;
-        return sign + (m === 0 ? h + i18nc("hours, short", "h") : h + ":" + String(m).padStart(2, "0"));
+        return sign + (m === 0 ? h + t.trc("hours, short", "h") : h + ":" + String(m).padStart(2, "0"));
     }
     signal configureRequested()
 
@@ -93,7 +97,7 @@ Item {
                     Text {
                         Layout.fillWidth: true
                         Layout.leftMargin: 4 * view.u
-                        text: Qt.locale().standaloneMonthName(view.month, Locale.LongFormat) + " " + view.year
+                        text: view.locale.standaloneMonthName(view.month, Locale.LongFormat) + " " + view.year
                         color: "white"
                         font.pixelSize: Math.round(15 * view.u)
                         font.weight: Font.DemiBold
@@ -101,7 +105,7 @@ Item {
                     }
                     PillButton {
                         visible: !view.onCurrentMonth
-                        label: i18n("Today")
+                        label: t.tr("Today")
                         onClicked: view.shiftMonth((view.now.getFullYear() - view.year) * 12 + view.now.getMonth() - view.month)
                     }
                     PillButton {
@@ -117,7 +121,7 @@ Item {
                 QQC2.DayOfWeekRow {
                     id: weekdays
                     Layout.fillWidth: true
-                    locale: Qt.locale()
+                    locale: view.locale
                     spacing: 0
                     padding: 0
                     delegate: Text {
@@ -136,7 +140,7 @@ Item {
                     Layout.fillWidth: true
                     month: view.month
                     year: view.year
-                    locale: Qt.locale()
+                    locale: view.locale
                     spacing: 0
                     padding: 0
                     delegate: Item {
@@ -208,7 +212,7 @@ Item {
                     text: {
                         const row = parent;
                         const diff = view.formatDiff(row.modelData.delta);
-                        const day = row.dayShift > 0 ? i18n("Tomorrow") : row.dayShift < 0 ? i18n("Yesterday") : "";
+                        const day = row.dayShift > 0 ? t.tr("Tomorrow") : row.dayShift < 0 ? t.tr("Yesterday") : "";
                         return day ? day + " · " + diff : diff;
                     }
                     color: view.dim
@@ -217,7 +221,7 @@ Item {
                 }
                 Text {
                     Layout.rightMargin: 4 * view.u
-                    text: Qt.locale().toString(parent.time, view.timeFormat)
+                    text: view.locale.toString(parent.time, view.timeFormat)
                     color: "white"
                     font.pixelSize: Math.round(14 * view.u)
                     font.weight: Font.DemiBold
@@ -231,7 +235,7 @@ Item {
             Layout.fillWidth: true
             Layout.preferredHeight: Math.round(26 * view.u)
             visible: view.zones.length === 0
-            text: i18n("Add time zones…")
+            text: t.tr("Add time zones…")
             color: view.dim
             font.pixelSize: Math.round(12 * view.u)
             font.weight: Font.Medium

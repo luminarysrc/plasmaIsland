@@ -7,6 +7,9 @@
         <entry name="city" type="String">
             <default></default>
         </entry>
+        <entry name="language" type="String">
+            <default></default>
+        </entry>
         <entry name="size" type="Int">
             <default>32</default>
             <min>16</min>

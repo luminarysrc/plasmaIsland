@@ -51,6 +51,7 @@ Item {
             visible: card.mode === "player"
             active: card.shown && visible
             player: card.app.player
+            language: card.app.language
             u: card.u
             onRaiseRequested: card.closeRequested()
         }
@@ -60,6 +61,8 @@ Item {
             anchors.fill: parent
             visible: card.mode === "weather"
             weather: card.app.weather
+            language: card.app.language
+            locale: card.app.uiLocale
             twelveHour: card.app.twelveHour
             u: card.u
         }
@@ -71,6 +74,8 @@ Item {
             active: card.shown && visible
             now: card.app.now
             zones: card.app.worldClocks
+            language: card.app.language
+            locale: card.app.uiLocale
             timeFormat: card.app.shortTimeFormat
             u: card.u
             onConfigureRequested: card.configureRequested()

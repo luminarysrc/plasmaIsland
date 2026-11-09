@@ -54,10 +54,16 @@ compiles them with `msgfmt` (from gettext).
 
 ## Languages
 
-English, Русский, Español, Deutsch and Ελληνικά (follows your Plasma language). The translations
-were made with AI; corrections are welcome — edit the `po/<lang>.po` file and open a pull request.
-`./install.sh` compiles them. To add a language, copy `po/plasma_applet_io.github.luminarysrc.plasmaisland.pot`
-to `po/<lang>.po` and translate it.
+English, Русский, Español, Deutsch and Ελληνικά. By default the widget follows your Plasma
+language; **Configure → Language** overrides it for this widget only (cards, settings, month and
+weekday names, and the place name in the weather). The translations were made with AI; corrections
+are welcome — edit the `po/<lang>.po` file and open a pull request.
+
+Plasma applies one language to the whole shell, so the widget carries its own copy of the
+strings: `po/gen-js.py` turns `po/*.po` into `package/contents/ui/Translations.js`. `./install.sh`
+and `./package.sh` run it (through `po/build.sh`), and the generated file is committed.
+To add a language, copy `po/plasma_applet_io.github.luminarysrc.plasmaisland.pot` to `po/<lang>.po`,
+translate it, and add the language to the list in `package/contents/ui/configGeneral.qml`.
 
 ## Update
 

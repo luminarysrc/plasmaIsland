@@ -7,6 +7,7 @@ Item {
     id: weather
 
     property string city: ""
+    property string language: ""     // the geocoder names the place in it ("" = its default)
     readonly property bool hasCity: city.trim() !== ""
     readonly property bool imperial: Qt.locale().measurementSystem === Locale.ImperialUSSystem
 
@@ -47,6 +48,11 @@ Item {
         soon.restart();
     }
     onImperialChanged: soon.restart()
+    onLanguageChanged: {
+        latitude = NaN;   // look the place up again to get its name in the new language
+        longitude = NaN;
+        soon.restart();
+    }
     Component.onCompleted: soon.restart()
 
     // Collapses the startup/config-change triggers above into a single request.
@@ -97,7 +103,8 @@ Item {
         }
         if (isNaN(latitude)) {
             const requested = name;
-            getJson("https://geocoding-api.open-meteo.com/v1/search?count=1&format=json&name="
+            getJson("https://geocoding-api.open-meteo.com/v1/search?count=1&format=json"
+                    + (language !== "" ? "&language=" + language : "") + "&name="
                     + encodeURIComponent(name), data => {
                 if (requested !== weather.city.trim()) {
                     return; // the city changed while we were waiting

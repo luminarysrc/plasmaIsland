@@ -10,6 +10,10 @@ import org.kde.plasma.private.digitalclock as DigitalClock
 KCM.ScrollViewKCM {
     id: page
 
+    // The chosen UI language (see the General page).
+    property string cfg_language
+    Translator { id: t; language: page.cfg_language }
+
     // Always assign a new array: in-place changes don't enable the Apply button.
     property var cfg_timeZones: []
 
@@ -41,8 +45,8 @@ KCM.ScrollViewKCM {
         QQC2.Label {
             Layout.fillWidth: true
             text: page.cfg_timeZones.length === 0
-                  ? i18n("No time zones yet. Search below and click one to add it.")
-                  : i18n("Shown in the calendar card, in this order:")
+                  ? t.tr("No time zones yet. Search below and click one to add it.")
+                  : t.tr("Shown in the calendar card, in this order:")
             wrapMode: Text.WordWrap
         }
 
@@ -61,20 +65,20 @@ KCM.ScrollViewKCM {
                     icon.name: "go-up"
                     enabled: index > 0
                     onClicked: page.move(index, -1)
-                    QQC2.ToolTip.text: i18n("Move up")
+                    QQC2.ToolTip.text: t.tr("Move up")
                     QQC2.ToolTip.visible: hovered
                 }
                 QQC2.ToolButton {
                     icon.name: "go-down"
                     enabled: index < page.cfg_timeZones.length - 1
                     onClicked: page.move(index, 1)
-                    QQC2.ToolTip.text: i18n("Move down")
+                    QQC2.ToolTip.text: t.tr("Move down")
                     QQC2.ToolTip.visible: hovered
                 }
                 QQC2.ToolButton {
                     icon.name: "list-remove"
                     onClicked: page.toggle(modelData)
-                    QQC2.ToolTip.text: i18n("Remove")
+                    QQC2.ToolTip.text: t.tr("Remove")
                     QQC2.ToolTip.visible: hovered
                 }
             }
@@ -84,7 +88,7 @@ KCM.ScrollViewKCM {
             id: search
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
-            placeholderText: i18n("Search a city…")
+            placeholderText: t.tr("Search a city…")
         }
     }
 

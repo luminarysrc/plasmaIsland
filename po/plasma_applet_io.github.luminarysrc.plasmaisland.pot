@@ -238,3 +238,15 @@ msgstr ""
 #: package/contents/config/config.qml:11
 msgid "Time Zones"
 msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Language:"
+msgstr ""
+
+#: package/contents/ui/Weather.qml
+msgid "km/h"
+msgstr ""
+
+#: package/contents/ui/Weather.qml
+msgid "mph"
+msgstr ""

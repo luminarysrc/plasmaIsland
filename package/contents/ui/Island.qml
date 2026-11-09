@@ -16,6 +16,8 @@ Item {
 
     required property var app   // the PlasmoidItem from main.qml
 
+    Translator { id: t; language: island.app.language }
+
     readonly property bool hovered: hover.containsMouse
     readonly property bool wide: hovered || app.cardOpen
     readonly property bool playing: !!app.player && app.player.playbackStatus === Mpris.PlaybackStatus.Playing
@@ -185,7 +187,7 @@ Item {
             }
             Text {
                 anchors.verticalCenter: parent.verticalCenter
-                text: island.hasCity ? island.app.weather.text : i18n("Set city")
+                text: island.hasCity ? island.app.weather.text : t.tr("Set city")
                 color: "#c8c8c8"
                 font.pixelSize: island.fontSize
                 font.weight: Font.Medium

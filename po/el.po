@@ -239,3 +239,15 @@ msgstr "Γενικά"
 msgid "Time Zones"
 msgstr "Ζώνες ώρας"
 
+
+#: package/contents/ui/configGeneral.qml
+msgid "Language:"
+msgstr "Γλώσσα:"
+
+#: package/contents/ui/Weather.qml
+msgid "km/h"
+msgstr "χλμ/ώρα"
+
+#: package/contents/ui/Weather.qml
+msgid "mph"
+msgstr "μίλια/ώρα"

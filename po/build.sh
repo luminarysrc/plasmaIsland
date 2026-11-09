@@ -9,3 +9,6 @@ for po in po/*.po; do
     mkdir -p "$dir"
     msgfmt "$po" -o "$dir/$DOMAIN.mo"
 done
+
+# Per-widget language choice: the same strings as a JS dictionary (see po/gen-js.py).
+python3 po/gen-js.py

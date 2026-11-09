@@ -15,6 +15,11 @@ PlasmoidItem {
     toolTipMainText: ""
     toolTipSubText: ""
 
+    // UI language: "" follows the system, otherwise "en", "ru", "es", "de" or "el".
+    // Dates, month and weekday names follow it too (times keep the system/12h/24h setting).
+    readonly property string language: Plasmoid.configuration.language
+    readonly property var uiLocale: language === "" ? Qt.locale() : Qt.locale(language)
+
     // Pill height in px (settings, or Ctrl+scroll on the pill). Everything else scales with it.
     readonly property int pillSize: Plasmoid.configuration.size
     readonly property real uiScale: pillSize / 32
@@ -42,7 +47,7 @@ PlasmoidItem {
         if (showSeconds && fmt.indexOf("ss") < 0) {
             fmt = fmt.replace("mm", "mm:ss");
         }
-        return Qt.locale().toString(now, fmt);
+        return uiLocale.toString(now, fmt);
     }
     // Date format shown on the right of the pill (see the settings for the choices).
     readonly property var dateFormats: [
@@ -51,9 +56,9 @@ PlasmoidItem {
     readonly property string dateText: {
         const i = Plasmoid.configuration.dateFormat;
         if (i === 6) {
-            return Qt.locale().toString(now, Locale.ShortFormat);
+            return uiLocale.toString(now, Locale.ShortFormat);
         }
-        return Qt.locale().toString(now, dateFormats[i] || dateFormats[0]);
+        return uiLocale.toString(now, dateFormats[i] || dateFormats[0]);
     }
 
     Timer {
@@ -109,6 +114,7 @@ PlasmoidItem {
     Weather {
         id: weather
         city: Plasmoid.configuration.city
+        language: root.language
     }
     readonly property alias weather: weather
 

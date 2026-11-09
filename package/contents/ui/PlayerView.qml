@@ -10,8 +10,11 @@ Item {
 
     property var player: null      // an MPRIS PlayerContainer, or null
     property real u: 1             // size multiplier
+    property string language: ""  // "" = system
     property bool active: false    // true while this view is on screen
     signal raiseRequested()
+
+    Translator { id: t; language: view.language }
 
     readonly property bool hasTrack: !!player && (player.track || "") !== ""
     readonly property bool playing: !!player && player.playbackStatus === Mpris.PlaybackStatus.Playing
@@ -65,7 +68,7 @@ Item {
         }
         Text {
             Layout.alignment: Qt.AlignHCenter
-            text: i18n("Nothing playing")
+            text: t.tr("Nothing playing")
             color: "#8a8a8a"
             font.pixelSize: Math.round(14 * view.u)
             font.weight: Font.Medium
