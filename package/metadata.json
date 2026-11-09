@@ -8,11 +8,17 @@
         ],
         "Category": "Date and Time",
         "Description": "A Dynamic Island style pill for the panel: time, weather and date on hover, now playing on click",
+        "Description[de]": "Eine Dynamic-Island-artige Kapsel für das Panel: Uhrzeit, bei Hover Wetter und Datum, per Klick die aktuelle Wiedergabe",
+        "Description[el]": "Μια «νησίδα» τύπου Dynamic Island για το πάνελ: ώρα, καιρός και ημερομηνία στο hover, τι παίζει με κλικ",
+        "Description[es]": "Una píldora al estilo Dynamic Island para el panel: la hora, el tiempo y la fecha al pasar el ratón y lo que suena al hacer clic",
+        "Description[ru]": "«Динамический остров» для панели: время, при наведении погода и дата, по клику что сейчас играет",
         "Icon": "preferences-system-time",
         "Id": "io.github.luminarysrc.plasmaisland",
         "License": "GPL-3.0-or-later",
         "Name": "Plasma Island",
-        "Version": "0.1.0"
+        "Version": "0.2.0",
+        "Website": "https://github.com/luminarysrc/plasmaIsland",
+        "BugReportUrl": "https://github.com/luminarysrc/plasmaIsland/issues"
     },
     "X-Plasma-API-Minimum-Version": "6.0"
 }

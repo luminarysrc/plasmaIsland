@@ -52,6 +52,13 @@ To add or fix a language, edit or copy a file in [`po/`](po) (e.g. `po/fr.po` fr
 `po/plasma_applet_io.github.luminarysrc.plasmaisland.pot`) and open a pull request. `./install.sh`
 compiles them with `msgfmt` (from gettext).
 
+## Languages
+
+English, Русский, Español, Deutsch and Ελληνικά (follows your Plasma language). The translations
+were made with AI; corrections are welcome — edit the `po/<lang>.po` file and open a pull request.
+`./install.sh` compiles them. To add a language, copy `po/plasma_applet_io.github.luminarysrc.plasmaisland.pot`
+to `po/<lang>.po` and translate it.
+
 ## Update
 
 ```sh
@@ -64,6 +71,13 @@ systemctl --user restart plasma-plasmashell   # Plasma caches the old QML until 
 ```sh
 kpackagetool6 -t Plasma/Applet -r io.github.luminarysrc.plasmaisland
 ```
+
+## Releasing to the KDE Store
+
+1. Bump `Version` in `package/metadata.json` (the store and “Get New Widgets” detect updates by it).
+2. `./package.sh` builds `plasma-island-<version>.plasmoid`, translations included. Don't zip
+   `package/` by hand: the compiled translations are generated, not committed.
+3. Upload the file as a new version of the existing store page. Never change `Id`.
 
 ## Notes
 
