@@ -251,3 +251,31 @@ msgstr "χλμ/ώρα"
 #: package/contents/ui/Weather.qml
 msgid "mph"
 msgstr "μίλια/ώρα"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Custom"
+msgstr "Προσαρμοσμένη"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Custom format:"
+msgstr "Προσαρμοσμένη μορφή:"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Preview: %1"
+msgstr "Προεπισκόπηση: %1"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Background:"
+msgstr "Φόντο:"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Transparent (text only, in the panel's colours)"
+msgstr "Διάφανο (μόνο κείμενο, στα χρώματα του πάνελ)"
+
+#: package/contents/ui/configGeneral.qml
+msgid "H/HH hours (24h), h/hh hours (12h), mm minutes, ss seconds, AP am/pm"
+msgstr "H/HH ώρες (24ωρο), h/hh ώρες (12ωρο), mm λεπτά, ss δευτερόλεπτα, AP π.μ./μ.μ."
+
+#: package/contents/ui/configGeneral.qml
+msgid "d/dd day, ddd/dddd weekday, M/MM/MMM/MMMM month, yy/yyyy year"
+msgstr "d/dd ημέρα, ddd/dddd ημέρα εβδομάδας, M/MM/MMM/MMMM μήνας, yy/yyyy έτος"

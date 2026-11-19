@@ -34,8 +34,10 @@ Weather comes from [Open-Meteo](https://open-meteo.com) (free, no account) and r
 
 Then right-click the top panel → **Add or Manage Widgets** → search **Plasma Island** and drag it
 into the panel. Right-click the pill → **Configure Plasma Island…** to set your city, the size
-(pill height in px, default 32; the cards scale with it), seconds on the clock and the new-track
-popup. The **Time Zones** page adds any number of world clocks (search a city, click to add,
+(pill height in px, default 32; the cards scale with it), the language, a transparent background
+(text only, in your panel's colours), the time and date format — 12/24-hour, several date styles,
+or your own Qt format such as `HH:mm:ss` or `yyyy-MM-dd`, independent of the system locale —
+seconds on the clock and the new-track popup. The **Time Zones** page adds any number of world clocks (search a city, click to add,
 reorder with the arrows).
 You can also hold **Ctrl** and scroll over the pill to resize it live.
 

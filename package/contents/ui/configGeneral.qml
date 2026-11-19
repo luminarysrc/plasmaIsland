@@ -14,6 +14,9 @@ KCM.SimpleKCM {
     property int cfg_dateFormat
     property alias cfg_size: sizeBox.value
     property alias cfg_showTrackToast: toastBox.checked
+    property alias cfg_customTimeFormat: customTimeField.text
+    property alias cfg_customDateFormat: customDateField.text
+    property alias cfg_transparentBackground: transparentBox.checked
 
     readonly property var languageCodes: ["", "en", "ru", "es", "de", "el"]
     readonly property var loc: cfg_language === "" ? Qt.locale() : Qt.locale(cfg_language)
@@ -37,9 +40,11 @@ KCM.SimpleKCM {
         ListElement { label: "System default" }
         ListElement { label: "12-hour" }
         ListElement { label: "24-hour" }
+        ListElement { label: "Custom" }
     }
     ListModel {
         id: dateModel
+        ListElement { label: "" }
         ListElement { label: "" }
         ListElement { label: "" }
         ListElement { label: "" }
@@ -62,11 +67,13 @@ KCM.SimpleKCM {
         clockModel.setProperty(0, "label", t.tr("System default"));
         clockModel.setProperty(1, "label", t.tr("12-hour"));
         clockModel.setProperty(2, "label", t.tr("24-hour"));
+        clockModel.setProperty(3, "label", t.tr("Custom"));
         const fmts = ["ddd, MMM d", "ddd, d MMM", "dd/MM/yyyy", "MM/dd/yyyy", "yyyy-MM-dd", "d MMMM yyyy"];
         for (let i = 0; i < fmts.length; i++) {
             dateModel.setProperty(i, "label", loc.toString(now, fmts[i]));
         }
         dateModel.setProperty(6, "label", t.tr("System short date") + " (" + loc.toString(now, Locale.ShortFormat) + ")");
+        dateModel.setProperty(7, "label", t.tr("Custom"));
         refreshBox(languageBox, () => Math.max(0, page.languageCodes.indexOf(page.cfg_language)));
         refreshBox(clockBox, () => page.cfg_clockFormat);
         refreshBox(dateBox, () => page.cfg_dateFormat);
@@ -110,6 +117,11 @@ KCM.SimpleKCM {
             font: Kirigami.Theme.smallFont
         }
         QQC2.CheckBox {
+            id: transparentBox
+            Kirigami.FormData.label: t.tr("Background:")
+            text: t.tr("Transparent (text only, in the panel's colours)")
+        }
+        QQC2.CheckBox {
             id: secondsBox
             Kirigami.FormData.label: t.tr("Clock:")
             text: t.tr("Show seconds")
@@ -122,6 +134,19 @@ KCM.SimpleKCM {
             currentIndex: page.cfg_clockFormat
             onActivated: index => page.cfg_clockFormat = index
         }
+        QQC2.TextField {
+            id: customTimeField
+            visible: page.cfg_clockFormat === 3
+            Kirigami.FormData.label: t.tr("Custom format:")
+            placeholderText: "HH:mm"
+        }
+        QQC2.Label {
+            visible: customTimeField.visible
+            text: t.tr("Preview: %1", page.loc.toString(new Date(), customTimeField.text.trim() || "HH:mm"))
+                  + "\n" + t.tr("H/HH hours (24h), h/hh hours (12h), mm minutes, ss seconds, AP am/pm")
+            opacity: 0.7
+            font: Kirigami.Theme.smallFont
+        }
         QQC2.ComboBox {
             id: dateBox
             Kirigami.FormData.label: t.tr("Date format:")
@@ -129,6 +154,19 @@ KCM.SimpleKCM {
             textRole: "label"
             currentIndex: page.cfg_dateFormat
             onActivated: index => page.cfg_dateFormat = index
+        }
+        QQC2.TextField {
+            id: customDateField
+            visible: page.cfg_dateFormat === 7
+            Kirigami.FormData.label: t.tr("Custom format:")
+            placeholderText: "yyyy-MM-dd"
+        }
+        QQC2.Label {
+            visible: customDateField.visible
+            text: t.tr("Preview: %1", page.loc.toString(new Date(), customDateField.text.trim() || "yyyy-MM-dd"))
+                  + "\n" + t.tr("d/dd day, ddd/dddd weekday, M/MM/MMM/MMMM month, yy/yyyy year")
+            opacity: 0.7
+            font: Kirigami.Theme.smallFont
         }
         QQC2.CheckBox {
             id: toastBox

@@ -20,6 +20,9 @@ PlasmoidItem {
     readonly property string language: Plasmoid.configuration.language
     readonly property var uiLocale: language === "" ? Qt.locale() : Qt.locale(language)
 
+    // No black pill: just the text, in the panel theme's colour.
+    readonly property bool transparentBackground: Plasmoid.configuration.transparentBackground
+
     // Pill height in px (settings, or Ctrl+scroll on the pill). Everything else scales with it.
     readonly property int pillSize: Plasmoid.configuration.size
     readonly property real uiScale: pillSize / 32
@@ -37,14 +40,18 @@ PlasmoidItem {
     // --- Clock -----------------------------------------------------------
     property date now: new Date()
     readonly property bool showSeconds: Plasmoid.configuration.showSeconds
-    // Clock format: 0 = follow system locale, 1 = 12-hour, 2 = 24-hour.
+    // Clock format: 0 = follow system locale, 1 = 12-hour, 2 = 24-hour, 3 = custom Qt format.
     readonly property int clockMode: Plasmoid.configuration.clockFormat
+    readonly property string customTimeFormat: Plasmoid.configuration.customTimeFormat.trim()
     readonly property string shortTimeFormat: clockMode === 1 ? "h:mm AP"
-        : clockMode === 2 ? "HH:mm" : Qt.locale().timeFormat(Locale.ShortFormat)
+        : clockMode === 2 ? "HH:mm"
+        : clockMode === 3 ? (customTimeFormat || "HH:mm")
+        : Qt.locale().timeFormat(Locale.ShortFormat)
     readonly property bool twelveHour: /a/i.test(shortTimeFormat)
     readonly property string timeText: {
         let fmt = shortTimeFormat;
-        if (showSeconds && fmt.indexOf("ss") < 0) {
+        // A custom format says itself whether it has seconds.
+        if (showSeconds && clockMode !== 3 && fmt.indexOf("ss") < 0) {
             fmt = fmt.replace("mm", "mm:ss");
         }
         return uiLocale.toString(now, fmt);
@@ -57,6 +64,9 @@ PlasmoidItem {
         const i = Plasmoid.configuration.dateFormat;
         if (i === 6) {
             return uiLocale.toString(now, Locale.ShortFormat);
+        }
+        if (i === 7) {
+            return uiLocale.toString(now, Plasmoid.configuration.customDateFormat.trim() || "yyyy-MM-dd");
         }
         return uiLocale.toString(now, dateFormats[i] || dateFormats[0]);
     }

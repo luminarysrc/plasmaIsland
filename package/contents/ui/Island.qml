@@ -18,6 +18,12 @@ Item {
 
     Translator { id: t; language: island.app.language }
 
+    // Colours: white on the black pill, or the panel theme's text colour without it.
+    readonly property bool bare: app.transparentBackground
+    readonly property color mainColor: bare ? Kirigami.Theme.textColor : "white"
+    readonly property color sideColor: bare ? Qt.alpha(Kirigami.Theme.textColor, 0.75) : "#c8c8c8"
+    readonly property color dimColor: bare ? Qt.alpha(Kirigami.Theme.textColor, 0.6) : "#9a9a9a"
+
     readonly property bool hovered: hover.containsMouse
     readonly property bool wide: hovered || app.cardOpen
     readonly property bool playing: !!app.player && app.player.playbackStatus === Mpris.PlaybackStatus.Playing
@@ -135,8 +141,8 @@ Item {
         height: island.pillHeight
         width: island.wide || island.toast ? island.wideWidth : island.restWidth
         radius: height / 2
-        color: "black"
-        border.width: 1
+        color: island.bare ? "transparent" : "black"
+        border.width: island.bare ? 0 : 1
         border.color: Qt.rgba(1, 1, 1, 0.16)   // thin outline so it shows on a dark panel
         clip: true
 
@@ -151,7 +157,7 @@ Item {
             anchors.horizontalCenterOffset: island.eqVisible ? -(island.eqWidth + island.eqGap) / 2 : 0
             Behavior on anchors.horizontalCenterOffset { NumberAnimation { duration: 220; easing.type: Easing.OutCubic } }
             text: island.app.timeText
-            color: "white"
+            color: island.mainColor
             font.pixelSize: island.fontSize
             font.weight: Font.DemiBold
             font.features: { "tnum": 1 }   // tabular digits: the pill doesn't wobble each second
@@ -166,6 +172,7 @@ Item {
             width: island.eqWidth
             height: Math.round(island.fontSize * 0.85)
             running: island.eqVisible
+            color: island.sideColor
             opacity: island.eqVisible ? 1 : 0
             Behavior on opacity { NumberAnimation { duration: 180 } }
         }
@@ -188,7 +195,7 @@ Item {
             Text {
                 anchors.verticalCenter: parent.verticalCenter
                 text: island.hasCity ? island.app.weather.text : t.tr("Set city")
-                color: "#c8c8c8"
+                color: island.sideColor
                 font.pixelSize: island.fontSize
                 font.weight: Font.Medium
             }
@@ -200,7 +207,7 @@ Item {
             anchors.rightMargin: island.pad
             anchors.verticalCenter: parent.verticalCenter
             text: island.app.dateText
-            color: "#c8c8c8"
+            color: island.sideColor
             font.pixelSize: island.fontSize
             font.weight: Font.Medium
             opacity: island.wide ? 1 : 0
@@ -240,9 +247,9 @@ Item {
                         return "";
                     }
                     const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
-                    return p.artist ? esc(p.track) + " <font color='#9a9a9a'>— " + esc(p.artist) + "</font>" : esc(p.track);
+                    return p.artist ? esc(p.track) + " <font color='" + island.dimColor + "'>— " + esc(p.artist) + "</font>" : esc(p.track);
                 }
-                color: "white"
+                color: island.mainColor
                 font.pixelSize: island.fontSize
                 font.weight: Font.DemiBold
             }

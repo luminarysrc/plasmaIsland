@@ -251,3 +251,31 @@ msgstr "km/h"
 #: package/contents/ui/Weather.qml
 msgid "mph"
 msgstr "mph"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Custom"
+msgstr "Benutzerdefiniert"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Custom format:"
+msgstr "Eigenes Format:"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Preview: %1"
+msgstr "Vorschau: %1"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Background:"
+msgstr "Hintergrund:"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Transparent (text only, in the panel's colours)"
+msgstr "Transparent (nur Text, in den Farben der Leiste)"
+
+#: package/contents/ui/configGeneral.qml
+msgid "H/HH hours (24h), h/hh hours (12h), mm minutes, ss seconds, AP am/pm"
+msgstr "H/HH Stunden (24 h), h/hh Stunden (12 h), mm Minuten, ss Sekunden, AP am/pm"
+
+#: package/contents/ui/configGeneral.qml
+msgid "d/dd day, ddd/dddd weekday, M/MM/MMM/MMMM month, yy/yyyy year"
+msgstr "d/dd Tag, ddd/dddd Wochentag, M/MM/MMM/MMMM Monat, yy/yyyy Jahr"
