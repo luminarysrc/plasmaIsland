@@ -90,7 +90,8 @@ kpackagetool6 -t Plasma/Applet -r io.github.luminarysrc.plasmaisland
 ## Notes
 
 - Built for a horizontal (top) panel.
-- The pill reserves its widened width in the panel, so the neighbouring widgets don't shift while it
-  animates.
+- At rest the widget takes only the width of the time and grows as the pill opens. With flexible
+  spacers on both sides the pill stays centred; if you'd rather the neighbouring widgets never move,
+  turn on **Panel space → Always reserve room for the expanded pill**.
 - Uses `org.kde.plasma.private.mpris`, Plasma's private media module (the same one the built-in
   Media Player widget uses). A future Plasma release could change it.

@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 
@@ -17,6 +18,7 @@ KCM.SimpleKCM {
     property alias cfg_customTimeFormat: customTimeField.text
     property alias cfg_customDateFormat: customDateField.text
     property alias cfg_transparentBackground: transparentBox.checked
+    property alias cfg_reserveSpace: reserveBox.checked
 
     readonly property var languageCodes: ["", "en", "ru", "es", "de", "el"]
     readonly property var loc: cfg_language === "" ? Qt.locale() : Qt.locale(cfg_language)
@@ -120,6 +122,18 @@ KCM.SimpleKCM {
             id: transparentBox
             Kirigami.FormData.label: t.tr("Background:")
             text: t.tr("Transparent (text only, in the panel's colours)")
+        }
+        QQC2.CheckBox {
+            id: reserveBox
+            Kirigami.FormData.label: t.tr("Panel space:")
+            text: t.tr("Always reserve room for the expanded pill")
+        }
+        QQC2.Label {
+            text: t.tr("Off: the widget takes only the width of the time and grows on hover. On: neighbouring widgets never move.")
+            opacity: 0.7
+            font: Kirigami.Theme.smallFont
+            wrapMode: Text.WordWrap
+            Layout.maximumWidth: Kirigami.Units.gridUnit * 22
         }
         QQC2.CheckBox {
             id: secondsBox

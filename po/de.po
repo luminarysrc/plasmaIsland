@@ -279,3 +279,15 @@ msgstr "H/HH Stunden (24 h), h/hh Stunden (12 h), mm Minuten, ss Sekunden, AP am
 #: package/contents/ui/configGeneral.qml
 msgid "d/dd day, ddd/dddd weekday, M/MM/MMM/MMMM month, yy/yyyy year"
 msgstr "d/dd Tag, ddd/dddd Wochentag, M/MM/MMM/MMMM Monat, yy/yyyy Jahr"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Panel space:"
+msgstr "Platz in der Leiste:"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Always reserve room for the expanded pill"
+msgstr "Immer Platz für die aufgeklappte Kapsel freihalten"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Off: the widget takes only the width of the time and grows on hover. On: neighbouring widgets never move."
+msgstr "Aus: Das Widget ist nur so breit wie die Uhrzeit und wächst beim Überfahren. An: Benachbarte Widgets bewegen sich nie."

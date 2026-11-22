@@ -279,3 +279,15 @@ msgstr "H/HH — часы (24ч), h/hh — часы (12ч), mm — минуты,
 #: package/contents/ui/configGeneral.qml
 msgid "d/dd day, ddd/dddd weekday, M/MM/MMM/MMMM month, yy/yyyy year"
 msgstr "d/dd — день, ddd/dddd — день недели, M/MM/MMM/MMMM — месяц, yy/yyyy — год"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Panel space:"
+msgstr "Место в панели:"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Always reserve room for the expanded pill"
+msgstr "Всегда резервировать место под раскрытую пилюлю"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Off: the widget takes only the width of the time and grows on hover. On: neighbouring widgets never move."
+msgstr "Выкл.: виджет занимает только ширину времени и раздвигается при наведении. Вкл.: соседние виджеты никогда не сдвигаются."

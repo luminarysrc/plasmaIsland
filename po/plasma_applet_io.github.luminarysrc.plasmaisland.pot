@@ -278,3 +278,15 @@ msgstr ""
 #: package/contents/ui/configGeneral.qml
 msgid "d/dd day, ddd/dddd weekday, M/MM/MMM/MMMM month, yy/yyyy year"
 msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Panel space:"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Always reserve room for the expanded pill"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Off: the widget takes only the width of the time and grows on hover. On: neighbouring widgets never move."
+msgstr ""

@@ -22,6 +22,8 @@ PlasmoidItem {
 
     // No black pill: just the text, in the panel theme's colour.
     readonly property bool transparentBackground: Plasmoid.configuration.transparentBackground
+    // Reserve the expanded width in the panel (neighbours never move) instead of growing on hover.
+    readonly property bool reserveSpace: Plasmoid.configuration.reserveSpace
 
     // Pill height in px (settings, or Ctrl+scroll on the pill). Everything else scales with it.
     readonly property int pillSize: Plasmoid.configuration.size

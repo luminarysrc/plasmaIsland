@@ -44,11 +44,13 @@ Item {
     readonly property real restWidth: timeLabel.implicitWidth + 2 * pad + (eqVisible ? eqWidth + eqGap : 0)
     readonly property real wideWidth: timeLabel.implicitWidth + 2 * (sideWidth + gap) + 2 * pad
 
-    // The panel slot is always as wide as the widened pill, so neighbours never shift
-    // while it animates.
-    Layout.minimumWidth: wideWidth
-    Layout.preferredWidth: wideWidth
-    Layout.maximumWidth: wideWidth
+    // By default the slot follows the pill: as narrow as the time at rest, growing as the pill
+    // springs open. With "reserve space" it is always as wide as the open pill, so neighbouring
+    // widgets never move. (Flexible spacers on both sides keep the pill centred either way.)
+    readonly property real slotWidth: app.reserveSpace ? wideWidth : Math.ceil(pill.width)
+    Layout.minimumWidth: slotWidth
+    Layout.preferredWidth: slotWidth
+    Layout.maximumWidth: slotWidth
     Layout.fillHeight: true
     implicitHeight: pillHeight
 

@@ -279,3 +279,15 @@ msgstr "H/HH ώρες (24ωρο), h/hh ώρες (12ωρο), mm λεπτά, ss δ
 #: package/contents/ui/configGeneral.qml
 msgid "d/dd day, ddd/dddd weekday, M/MM/MMM/MMMM month, yy/yyyy year"
 msgstr "d/dd ημέρα, ddd/dddd ημέρα εβδομάδας, M/MM/MMM/MMMM μήνας, yy/yyyy έτος"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Panel space:"
+msgstr "Χώρος στο πάνελ:"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Always reserve room for the expanded pill"
+msgstr "Πάντα κράτηση χώρου για την ανεπτυγμένη κάψουλα"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Off: the widget takes only the width of the time and grows on hover. On: neighbouring widgets never move."
+msgstr "Ανενεργό: το γραφικό στοιχείο πιάνει μόνο το πλάτος της ώρας και μεγαλώνει στο hover. Ενεργό: τα γειτονικά στοιχεία δεν μετακινούνται ποτέ."
