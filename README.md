@@ -6,6 +6,16 @@
 
 A Dynamic Island–style pill for a KDE Plasma 6 top panel.
 
+**[Get it on the KDE Store](https://store.kde.org/p/2381160/)** · or in Plasma: *Add Widgets → Get New Widgets → Download New Plasma Widgets* → search “Plasma Island”.
+
+| Resting | Hover |
+|---|---|
+| ![Resting pill](screenshots/1-rest.png) | ![Hover: weather and date](screenshots/2-hover.png) |
+
+![Media card](screenshots/3-player.png)
+![Weather card](screenshots/4-weather.png)
+![Calendar with world clocks](screenshots/5-calendar.png)
+
 - **Resting:** a black pill showing the time, with a small animated equalizer while music plays.
 - **Hover:** it springs wider to both sides: weather on the left, date on the right.
 - **Click the time:** a matching black card drops below it with what's playing — art, title,
@@ -27,6 +37,8 @@ Weather comes from [Open-Meteo](https://open-meteo.com) (free, no account) and r
 15 minutes. °C or °F follows your system locale; the time format (12h/24h) and date format follow your locale by default and can be changed in the settings.
 
 ## Install
+
+From the [KDE Store](https://store.kde.org/p/2381160/) (see above), or from source:
 
 ```sh
 ./install.sh
